@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Hangman from './Hangman';
+import { Hangman } from './Hangman';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
