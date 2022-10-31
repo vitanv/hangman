@@ -1,0 +1,11 @@
+
+.container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.keys{
+  max-width: 15rem;
+}

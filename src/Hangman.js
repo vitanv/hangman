@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Hangman.css';
 
 export class Hangman extends React.Component{
@@ -10,6 +11,7 @@ export class Hangman extends React.Component{
     }
     this.colorPickerRef = React.createRef();
     this.Draw = this.Draw.bind(this);
+    this.makeButtons = this.makeButtons.bind(this);
   }
 
  
@@ -83,25 +85,29 @@ export class Hangman extends React.Component{
         break;
       default:
         break;
-    }
-    
-    
-   
-    
-    
-    
-
-    
-    
+    }  
   }
+
+  makeButtons = () => {
+    const buttons = [];
+    for(let i = 0; i < 26; i++){
+     let letter = String.fromCharCode(i + 65);
+     buttons.push(<button className="btn btn-letter">{letter}</button>)
+    }
+    return buttons;
+  }
+  
 
   render(){
     return(
       <div className='container'>
          <canvas ref={this.colorPickerRef} height="300" />
          <button className='btn btn-primary' onClick={() => this.Draw()}>Wrong</button>
+         
+         <div className='keys'>{this.makeButtons()}</div>
       </div>
     )
   }
 
 }
+
